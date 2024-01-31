@@ -1,0 +1,4 @@
+{
+    "rust-analyzer.cargo.target": ".cargo/x86_64-fishstick.json",
+    "rust-analyzer.check.allTargets": false,
+}
