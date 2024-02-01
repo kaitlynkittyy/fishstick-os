@@ -10,7 +10,7 @@ fn panic(_info: &PanicInfo) -> ! {
     loop{}
 }
 
-static OUTPUT: &[u8] = b"bloink";
+static OUTPUT: &[u8] = b"ERROR";
 
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
@@ -18,7 +18,7 @@ pub extern "C" fn _start() -> ! {
     for (i, &byte) in OUTPUT.iter().enumerate() {
         unsafe {
             *vga_buf.offset(i as isize * 2) = byte;
-            *vga_buf.offset(i as isize * 2 + 1) = 0xb;
+            *vga_buf.offset(i as isize * 2 + 1) = 0xCF;
         }
     }
     loop{}
